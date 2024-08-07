@@ -2,7 +2,11 @@
 
 
 ### Introduction
-MelodyFreq is a simple note frequency calculator and audio playback tool. You can input musical notes (e.g., C4, Db6), and the program will calculate the frequency of the note and play the sound at that frequency. You can also customize the volume and playback duration.
+MelodyFreq is a simple note frequency calculator and audio playback tool. 
+
+You can input musical notes (e.g., C4, Db6), and the program will calculate the frequency of the note and play the sound at that frequency. 
+
+You can also customize the volume and playback duration.
 
 
 ### Features
