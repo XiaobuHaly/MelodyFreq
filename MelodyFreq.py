@@ -48,9 +48,10 @@ def play_sound():
         messagebox.showerror("错误", "请确保音量和持续时间是有效的数字。")
         return
 
-    if not (0 <= volume <= 1):
-        messagebox.showerror("错误", "音量必须在0到1之间。")
+    if not (1 <= volume <= 100):
+        messagebox.showerror("错误", "音量必须在1到100之间。")
         return
+    volume = volume / 100
 
     sample_rate = 44100
     t = np.linspace(0, duration, int(sample_rate * duration), endpoint=False)
@@ -73,9 +74,6 @@ def enable_blur_effect(hwnd):
 root = tk.Tk()
 root.title("音符频率计算器")
 
-# 设置窗口在任务栏中显示
-ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID("myapp")
-
 current_frequency = None
 
 # 获取窗口句柄并启用毛玻璃效果
@@ -95,7 +93,7 @@ result_label.pack(pady=10)
 control_frame = tk.Frame(root)
 control_frame.pack(fill='x', pady=10)
 
-tk.Label(control_frame, text="音量（0到1之间）：").grid(row=0, column=0, padx=5)
+tk.Label(control_frame, text="音量（1到100之间）：").grid(row=0, column=0, padx=5)
 volume_entry = tk.Entry(control_frame, font=('Arial', 14), justify='center')
 volume_entry.grid(row=0, column=1, padx=5)
 
